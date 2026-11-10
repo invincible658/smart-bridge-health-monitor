@@ -1,0 +1,30 @@
+[
+  {
+    "standard_id": "IRC-SP-35-SEC4",
+    "standard_title": "Indian Roads Congress Guidelines for Bridge Inspection (Section 4: Bearings and Substations)",
+    "trigger_condition": "Differential settlement of piers exceeding 20 mm or angular tilt detected in foundation.",
+    "inspection_protocol": "Immediate visual inspection of elastomeric/pot bearings for shearing, bulging, or unseating. Verify clearance at expansion joints. Deploy level surveying to track 48-hour settlement velocity.",
+    "corrective_actions": "Enforce immediate 30 km/h traffic speed limit and axle-load restrictions. If settlement exceeds 40 mm, prepare hydraulic jacking rigs for temporary pier shoring."
+  },
+  {
+    "standard_id": "IRC-SP-35-SEC7",
+    "standard_title": "Indian Roads Congress Guidelines for Bridge Inspection (Section 7: Concrete Superstructure & Prestressed Girders)",
+    "trigger_condition": "Spalling of concrete cover exceeding 5 m² or exposed prestressing tendons.",
+    "inspection_protocol": "Sound concrete with hammer sounding to map delaminated zones. Inspect exposed prestressing strands for pitting corrosion, wire snap, or carbonation depth.",
+    "corrective_actions": "Erect protective debris netting underneath to prevent falling spall hazard. Clean exposed steel with rust converters and apply polymer-modified structural mortar repair."
+  },
+  {
+    "standard_id": "FHWA-BIM-CH10",
+    "standard_title": "Federal Highway Administration Bridge Inspector's Manual (Chapter 10: Dynamic Modal Deviations & Tendon Integrity)",
+    "trigger_condition": "Fundamental vertical bending frequency drops by more than 8% from historical baseline.",
+    "inspection_protocol": "Execute non-destructive ultrasonic impact-echo testing on post-tensioning ducts to assess tendon grouting voids and strand continuity. Verify mid-span dead-load sag profile.",
+    "corrective_actions": "Reduce bridge live-load capacity rating by 25%. Place continuous dynamic acoustic emission sensors to monitor ongoing tendon strand fractures."
+  },
+  {
+    "standard_id": "IRC-SP-35-SEC9",
+    "standard_title": "Indian Roads Congress Guidelines for Bridge Inspection (Section 9: Abutments and Geotechnical Hazards)",
+    "trigger_condition": "Abutment displacement, backfill movement, or landslide pressure against wing walls.",
+    "inspection_protocol": "Inspect abutment walls for shear cracking, weep hole drainage blockage, and toe scouring. Measure gap variations at expansion fingers.",
+    "corrective_actions": "Clear drainage channels, clear toe debris, and install soil nailing / micropiles if active slope displacement is observed."
+  }
+]

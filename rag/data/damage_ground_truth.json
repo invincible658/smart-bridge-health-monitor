@@ -1,0 +1,90 @@
+[
+  {
+    "scenario_id": 0,
+    "damage_type": "Undamaged Baseline",
+    "description": "Bridge in original, undamaged reference condition under normal operational ambient vibration.",
+    "affected_elements": "None",
+    "modal_indicators": "1st vertical bending mode stable at ~3.85 Hz, torsional modes consistent.",
+    "severity": "Normal"
+  },
+  {
+    "scenario_id": 5,
+    "damage_type": "Pier Settlement (20 mm)",
+    "description": "Lowering of intermediate pier P1 by 20 mm to simulate differential foundation settlement.",
+    "affected_elements": "Pier P1, intermediate bearing assemblies, adjacent girder span",
+    "modal_indicators": "Slight downward shift in 1st bending mode (~3.78 Hz), minor static tilt offset on pier channels.",
+    "severity": "Minor"
+  },
+  {
+    "scenario_id": 6,
+    "damage_type": "Pier Settlement (40 mm)",
+    "description": "Lowering of intermediate pier P1 by 40 mm.",
+    "affected_elements": "Pier P1, deck expansion joints",
+    "modal_indicators": "Clear modal frequency decrease (~3.68 Hz), measurable strain asymmetry between north and south girders.",
+    "severity": "Moderate"
+  },
+  {
+    "scenario_id": 7,
+    "damage_type": "Pier Settlement (80 mm - 95 mm)",
+    "description": "Severe differential settlement of pier P1 by 80 mm and subsequently 95 mm.",
+    "affected_elements": "Pier P1 foundation, bearings, continuous box-girder hinge",
+    "modal_indicators": "1st vertical bending mode drops below 3.50 Hz, high cross-axis coupling on lateral channels.",
+    "severity": "Critical"
+  },
+  {
+    "scenario_id": 8,
+    "damage_type": "Foundation Tilt",
+    "description": "Lifting of pier and artificial tilting of the foundation pad.",
+    "affected_elements": "Pier P1 footing, subsoil interface",
+    "modal_indicators": "Torsional mode frequency shift, asymmetry in transverse accelerometer responses.",
+    "severity": "Severe"
+  },
+  {
+    "scenario_id": 9,
+    "damage_type": "Concrete Spalling (12 m²)",
+    "description": "Chipping and removal of 12 m² concrete cover at the girder soffit to simulate freeze-thaw spalling.",
+    "affected_elements": "Girder soffit, concrete reinforcement cover",
+    "modal_indicators": "High-frequency impulse bursts, increased kurtosis on localized soffit sensors 12-16.",
+    "severity": "Moderate"
+  },
+  {
+    "scenario_id": 10,
+    "damage_type": "Concrete Spalling (24 m²)",
+    "description": "Extension of soffit concrete spalling to 24 m².",
+    "affected_elements": "Mid-span girder soffit",
+    "modal_indicators": "Sustained elevation in spectral entropy and localized energy dissipation across high frequencies.",
+    "severity": "Severe"
+  },
+  {
+    "scenario_id": 11,
+    "damage_type": "Landslide Simulation",
+    "description": "Simulated slope failure/landslide movement of 1 m against the bridge abutment.",
+    "affected_elements": "Abutment, approach embankment, end wing walls",
+    "modal_indicators": "Low-frequency boundary condition stiffness change, noticeable DC axis shift on abutment sensors.",
+    "severity": "Critical"
+  },
+  {
+    "scenario_id": 12,
+    "damage_type": "Concrete Hinge Failure",
+    "description": "Mechanical failure/disruption of the concrete pendulum hinge at the bridge abutment.",
+    "affected_elements": "Pendulum hinge, abutment column connection",
+    "modal_indicators": "Shift in rotational stiffness, significant variation in vertical deck mode shapes.",
+    "severity": "Critical"
+  },
+  {
+    "scenario_id": 13,
+    "damage_type": "Anchor Head Failure",
+    "description": "Controlled failure of 2 to 4 prestressing cable anchor heads.",
+    "affected_elements": "Prestressing anchorages, post-tensioned cables",
+    "modal_indicators": "Localized tension loss, sudden shift in high-order beam bending frequencies.",
+    "severity": "Severe"
+  },
+  {
+    "scenario_id": 14,
+    "damage_type": "Post-Tensioning Tendon Rupture",
+    "description": "Cutting and progressive rupture of 2 to 6 post-tensioning steel tendons inside the box girder.",
+    "affected_elements": "Internal post-tensioning tendons, main span longitudinal flexural capacity",
+    "modal_indicators": "Substantial global stiffness reduction, fundamental bending frequency drops significantly across mid-span sensors.",
+    "severity": "Critical"
+  }
+]
