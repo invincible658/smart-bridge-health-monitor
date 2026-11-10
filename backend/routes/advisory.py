@@ -1,41 +1,44 @@
 """
-RAG Advisory API routes: Retrieves historical failure scenarios and generates LLM inspection advisories.
+Advisory & AI Inspector API Routes.
+Connects ChromaDB RAG retrieval and Groq/Gemini LLM incident advisory generation.
 """
 from fastapi import APIRouter
 from pydantic import BaseModel
+from src.report_generator import generate_incident_advisory, answer_inspector_query
 
 router = APIRouter()
 
 class AdvisoryRequest(BaseModel):
-    segment_id: int
-    anomaly_score: float = -0.38
-    top_channels: list = [14, 15]
+    segment_id: int = 450
+    anomaly_score: float = -0.42
+    shap_summary: str = "- ch14_dominant_freq: attribution score +0.48\n- ch15_kurtosis: attribution score +0.26"
+    top_channels: list[int] = [14, 15]
+    forecast_warning: str = "Critical threshold breach predicted at step T+6"
 
 class ChatRequest(BaseModel):
     message: str
 
 @router.post("/")
-def generate_advisory(req: AdvisoryRequest):
+def get_advisory(req: AdvisoryRequest):
     """
-    Synthesizes current telemetry metrics with ChromaDB historical cases to produce an LLM advisory.
+    Retrieves matching historical failure cases from ChromaDB and synthesizes an inspection advisory.
     """
-    return {
-        "segment_id": req.segment_id,
-        "matched_historical_scenario": "Scenario 6: Pier Settlement (40 mm)",
-        "applicable_standard": "IRC-SP-35 Section 4 (Bearing and Settlement Guidelines)",
-        "advisory_text": (
-            "Anomalous downward frequency shift detected primarily on deck channels 14 and 15, indicating "
-            "localized stiffness reduction consistent with historical 40 mm pier settlement. In accordance with "
-            "IRC-SP-35 Section 4, deploy level surveying within 24 hours to monitor elevation velocity and "
-            "inspect elastomeric bearing distortion. Implement temporary traffic speed restrictions to reduce dynamic load."
-        )
-    }
+    res = generate_incident_advisory(
+        segment_id=req.segment_id,
+        anomaly_score=req.anomaly_score,
+        shap_summary=req.shap_summary,
+        top_channels=req.top_channels,
+        forecast_warning=req.forecast_warning
+    )
+    return res
 
 @router.post("/chat")
 def chat_inspector(req: ChatRequest):
     """
-    Answers natural language queries from civil engineers about bridge conditions.
+    Answers natural language questions asked by engineers using the RAG knowledge base.
     """
+    reply = answer_inspector_query(req.message)
     return {
-        "reply": f"Received query: '{req.message}'. Historical baseline records indicate 1st vertical bending modes typically maintain 3.85 Hz under healthy conditions."
+        "user_query": req.message,
+        "reply": reply
     }
