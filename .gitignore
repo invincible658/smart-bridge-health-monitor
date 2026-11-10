@@ -23,6 +23,8 @@ yarn-error.log*
 context.md
 techstack.md
 workflow.md
+claude.md
+CLAUDE.md
 
 # Data & Model Caches (Keep heavy binary blobs out of git)
 data/cache/
